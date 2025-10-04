@@ -1,0 +1,185 @@
+/* Fuente y estilos básicos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', serif;
+}
+
+body {
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #1e3a8a;
+  color: white;
+  padding: 2rem 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar nav ul li a {
+  color: #dbeafe;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+  color: #ffffff;
+}
+
+/* Main content */
+.content {
+  flex: 1;
+  padding: 2rem;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #1e40af;
+}
+
+header p {
+  color: #475569;
+}
+
+/* Semana Section */
+.semana {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.semana h2 {
+  margin-bottom: 1rem;
+  color: #0f172a;
+  font-size: 1.7rem;
+}
+
+.tarjetas {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  /* para grid que se muestra/oculta en parcial: */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.2rem 1.5rem;
+  flex: 1 1 250px;
+  transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+  margin-bottom: 0.8rem;
+  color: #1d4ed8;
+}
+
+.tarjeta a {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.tarjeta a:hover {
+  color: #2563eb;
+}
+
+/* Estilos específicos para sesiones del parcial */
+.sesion h3 {
+  margin-bottom: 1rem;
+  color: #1d4ed8;
+}
+
+.sesion a {
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.enlace-visualizar {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.enlace-visualizar:hover {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.enlace-descargar {
+  background-color: #10b981;
+  color: white;
+}
+
+.enlace-descargar:hover {
+  background-color: #059669;
+  color: #fff;
+}
+
+/* Botón ver parcial */
+.boton-descarga {
+  cursor: pointer;
+  background-color: #1e3a8a;
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.boton-descarga:hover {
+  background-color: #2563eb;
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
