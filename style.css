@@ -1,4 +1,4 @@
-/* Fuente y estilos básicos */
+/* === Estilos base === */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,180 +6,277 @@
   font-family: 'Times New Roman', serif;
 }
 
+/* === Fondo general === */
 body {
-  background-color: #f0f4f8;
-  color: #333;
+  background-image: url("imagen/imagen.jpg"); /* Tu imagen actual */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  position: relative;
 }
 
-.container {
-  display: flex;
-  min-height: 100vh;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 220px;
-  background-color: #1e3a8a;
-  color: white;
-  padding: 2rem 1rem;
-  position: sticky;
+/* Capa oscura sobre la imagen */
+body::before {
+  content: "";
+  position: fixed;
   top: 0;
-  height: 100vh;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: -1;
 }
 
-.sidebar h2 {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  text-align: center;
+/* === Encabezado === */
+header {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #00eaff;
+  box-shadow: 0 0 15px #00eaff80;
 }
 
-.sidebar nav ul {
-  list-style: none;
+.logo-nombre {
+  text-align: left;
 }
 
-.sidebar nav ul li {
-  margin-bottom: 1rem;
+.universidad {
+  font-size: 1rem;
+  color: #00eaff;
+  letter-spacing: 1px;
 }
 
-.sidebar nav ul li a {
-  color: #dbeafe;
+.nombre {
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 15px #00eaff;
+}
+
+/* === Menú === */
+.menu a {
+  color: #fff;
   text-decoration: none;
+  margin: 0 15px;
   font-weight: bold;
+  position: relative;
   transition: color 0.3s;
 }
 
-.sidebar nav ul li a:hover {
-  color: #ffffff;
+.menu a:hover {
+  color: #00eaff;
 }
 
-/* Main content */
-.content {
-  flex: 1;
+/* Línea brillante debajo del link activo */
+.menu a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #00eaff;
+  transition: 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* === Contenedor principal === */
+.container {
   padding: 2rem;
 }
 
-header {
-  margin-bottom: 2rem;
+/* === Secciones === */
+.seccion {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+  padding: 2rem;
+  margin-top: 2rem;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  color: #1e40af;
-}
-
-header p {
-  color: #475569;
-}
-
-/* Semana Section */
-.semana {
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #cbd5e1;
-}
-
-.semana h2 {
-  margin-bottom: 1rem;
-  color: #0f172a;
-  font-size: 1.7rem;
-}
-
-.tarjetas {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  /* para grid que se muestra/oculta en parcial: */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.tarjeta {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  padding: 1.2rem 1.5rem;
-  flex: 1 1 250px;
-  transition: transform 0.3s;
-}
-
-.tarjeta:hover {
-  transform: translateY(-5px);
-}
-
-.tarjeta h3 {
-  margin-bottom: 0.8rem;
-  color: #1d4ed8;
-}
-
-.tarjeta a {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #1e3a8a;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.tarjeta a:hover {
-  color: #2563eb;
-}
-
-/* Estilos específicos para sesiones del parcial */
-.sesion h3 {
-  margin-bottom: 1rem;
-  color: #1d4ed8;
-}
-
-.sesion a {
-  display: inline-block;
-  margin-right: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.enlace-visualizar {
-  background-color: #3b82f6;
-  color: white;
-}
-
-.enlace-visualizar:hover {
-  background-color: #2563eb;
-  color: #fff;
-}
-
-.enlace-descargar {
-  background-color: #10b981;
-  color: white;
-}
-
-.enlace-descargar:hover {
-  background-color: #059669;
-  color: #fff;
-}
-
-/* Botón ver parcial */
-.boton-descarga {
-  cursor: pointer;
-  background-color: #1e3a8a;
-  border: none;
-  color: white;
-  font-weight: 700;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-
-.boton-descarga:hover {
-  background-color: #2563eb;
-}
-
-/* Footer */
-footer {
-  margin-top: 4rem;
+/* === Bienvenida === */
+.bienvenida h2 {
+  color: #00eaff;
   text-align: center;
-  color: #64748b;
-  font-size: 0.9rem;
+  text-shadow: 0 0 15px #00eaff;
+  margin-bottom: 1rem;
 }
+
+.bienvenida p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #e5e5e5;
+}
+
+
+/* === Perfil Sobre Mí === */
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.foto-perfil {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid #00eaff;
+  object-fit: cover;
+  box-shadow: 0 0 10px #00eaff80;
+}
+
+/* === Texto del Perfil (Sobre Mí) === */
+.info-perfil {
+  color: #e5e5e5;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.info-perfil strong {
+  color: #00eaff;
+}
+
+/* === Sección Sobre Mí (general) === */
+#sobreMi {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+  padding: 2rem;
+  margin-top: 2rem;
+  animation: aparecer 1s ease;
+}
+
+/* === Efecto al mostrar "Sobre Mí" === */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Tareas === */
+.semana {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid rgba(0, 234, 255, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.1);
+}
+
+.semana h4 {
+  color: #00eaff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+.semana a {
+  display: inline-block;
+  margin: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: #00eaff;
+  color: #000;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.semana a:hover {
+  background: #0099cc;
+  color: #fff;
+}
+.semana-volver {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background: #00eaff;
+  color: #000;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.semana-volver:hover {
+  background: #0099cc;
+  color: #fff;
+}
+/* === Sección de Contacto dentro de "Sobre Mí" === */
+.contacto {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 234, 255, 0.4);
+}
+
+.contacto h3 {
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.iconos-contacto a img {
+  width: 45px;
+  height: 45px;
+  margin: 0 12px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iconos-contacto a img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px #00eaff;
+}
+
+/* === Contacto (en todas las páginas, centrado) === */
+.contacto {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(0, 234, 255, 0.4);
+}
+
+.contacto h3 {
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.iconos-contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.iconos-contacto a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iconos-contacto a img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px #00eaff;
+}
+
